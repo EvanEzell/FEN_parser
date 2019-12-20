@@ -1,2 +1,2 @@
-# FEN_parser
+# FEN Parser
 A Forsyth-Edwards Notation Validator
