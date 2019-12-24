@@ -194,7 +194,7 @@ void parse_fen() {
     }
 
     /* parse halfmove clock */
-    if (scanf("%d", &fen.halfmove) != 1) {
+    if (scanf("%d", &fen.halfmove) != 1 || fen.halfmove < 0) {
         fprintf(stderr, "Invalid halfmove clock. ");
         fprintf(stderr, "Must be a non-negative integer.\n");
         exit(1);
@@ -207,16 +207,10 @@ void parse_fen() {
     }
 
     /* parse fullmove number */
-    if (scanf("%d", &fen.fullmove) != 1) {
+    if (scanf("%d", &fen.fullmove) != 1 || fen.fullmove <= 0) {
         fprintf(stderr, "Invalid fullmove number. ");
         fprintf(stderr, "Must be a positive integer.\n");
         exit(1);
-    } else {
-        if (i < 1) {
-            fprintf(stderr, "Invalid fullmove number. ");
-            fprintf(stderr, "Must be a positive integer.\n");
-            exit(1);
-        } 
     }
 
     getchar(); /* eat newline */
